@@ -70,11 +70,11 @@ def load_time_series():
 
             tmp_list = []
             for line in f:  # 116
-                tmp = np.zeros(116)
+                tmp = np.zeros(106)
                 line.strip('\n')
                 line = line.split(' ')
 
-                for columns in range(116):
+                for columns in range(106):
                     tmp[columns] = line[columns]
 
                 tmp_list.append(tmp)
