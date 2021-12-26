@@ -1,9 +1,11 @@
 # GNN_ADNI
 # TE-HI-GCN
 
-The implementation of TE-HI-GCN in our paper:
+The implementation of TE-HI-GCN in paper:
 
 Lanting Li et.al "TE-HI-GCN: An Ensemble of Transfer Hierachical Graph Convolutional Networks for Disorder Diagnosis." 
+# code by 
+Lanting Li
 
 # Require
 
