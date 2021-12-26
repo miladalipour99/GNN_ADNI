@@ -65,7 +65,7 @@ class EarlyStopping:
 def load_time_series():
     t_brains = []
     for i in range(133):
-        with open('ADNI/'+ str(i + 1) + '.txt', 'r') as f:
+        with open('/content/ADNI/'+ str(i + 1) + '.txt', 'r') as f:
             counts = 0
 
             tmp_list = []
@@ -91,7 +91,7 @@ def load_time_series():
 
 # load 866 label
 def load_label():
-    filename_graphs = 'ADNI/label_ADNI.txt'
+    filename_graphs = '/content/ADNI/label_ADNI.txt'
 
     graph_labels = []
 
