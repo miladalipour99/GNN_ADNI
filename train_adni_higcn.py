@@ -410,9 +410,9 @@ def train():
             print('train_result:', fold, epoch, train_result)
 
             with torch.no_grad():
-                torch.save(model.state_dict(), 'hi/higcn_ADNI' + str(fold) + '_0.0' + '.pt')
+                torch.save(model.state_dict(), '/content/hi/higcn_ADNI' + str(fold) + '_0.0' + '.pt')
 
-        model.load_state_dict(torch.load('hi/higcn_ADNI' + str(fold) + '_0.0' + '.pt'))
+        model.load_state_dict(torch.load('/content/hi/higcn_ADNI' + str(fold) + '_0.0' + '.pt'))
 
         test_out, _ = model.forward(train_test, train_test_node_adj)
         test_output = test_out.cpu().data.numpy().argmax(axis=1)[:len(test)]
