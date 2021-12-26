@@ -333,7 +333,7 @@ def train():
     thr = 0
     ts_result = []
 
-    for fold in range(10):
+    for fold in range(3):
         pcc, train, test, new_labels = ten_fold(fold)
         new_labels = np.array(new_labels)
         graph_kenel = get_graph_kernel(fold)
