@@ -1,4 +1,3 @@
-# GNN_ADNI
 # TE-HI-GCN
 
 The implementation of TE-HI-GCN in paper:
