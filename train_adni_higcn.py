@@ -120,7 +120,7 @@ def ten_fold(fold):
 
     series = load_time_series()
     labels = load_label()
-    ts_folder = StratifiedKFold(n_splits=12, random_state=0, shuffle=True).split(series, labels)
+    ts_folder = StratifiedKFold(n_splits=4, random_state=0, shuffle=True).split(series, labels)
     fold_count = 0
     for t_idx, s_idx in ts_folder:
 
