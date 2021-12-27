@@ -141,22 +141,26 @@ def ten_fold(fold):
         #        print('series[train[ti]][:, :20]',(series[train[ti]][:, :20]).shape)
         #        print('series[train[ti]][:, 20:40]',(series[train[ti]][:, 20:40]).shape)
         #        print('series[train[ti]][:, 40:]',(series[train[ti]][:, 40:]).shape)
-                new_series.append(series[train[ti]][:, :45])
-                new_series.append(series[train[ti]][:, 45:90])
-                new_series.append(series[train[ti]][:, 90:])
+        #        new_series.append(series[train[ti]][:, :45])
+        #        new_series.append(series[train[ti]][:, 45:90])
+        #        new_series.append(series[train[ti]][:, 90:])
 
-                new_labels.append(1)
-                new_labels.append(1)
+        #        new_labels.append(1)
+        #        new_labels.append(1)
+        #        new_labels.append(1)
+                new_series.append(series[train[ti]])
                 new_labels.append(1)
             else:
-                new_series.append(series[train[ti]][:, :45])
-                new_series.append(series[train[ti]][:, 45:90])
-                new_series.append(series[train[ti]][:, 90:])
+             #   new_series.append(series[train[ti]][:, :45])
+             #   new_series.append(series[train[ti]][:, 45:90])
+             #   new_series.append(series[train[ti]][:, 90:])
 
+             #   new_labels.append(0)
+             #   new_labels.append(0)
+             #   new_labels.append(0)
+                new_series.append(series[train[ti]])
                 new_labels.append(0)
-                new_labels.append(0)
-                new_labels.append(0)
-
+                
         random.Random(0).shuffle(train)
 
         neww = np.array(new_labels)
@@ -178,9 +182,9 @@ def ten_fold(fold):
         print(len(new_series), len(series))
 
         pcc = get_corr(new_series)
-        print("new_labels:",new_labels)
-        print("train:",train)
-        print("test:",test)
+       # print("new_labels:",new_labels)
+       # print("train:",train)
+       # print("test:",test)
        # print("pcc:",pcc)
         return pcc, train, test, new_labels
 
