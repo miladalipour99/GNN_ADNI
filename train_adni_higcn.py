@@ -74,7 +74,7 @@ def load_time_series():
                 line.strip('\n')
                 line = line.split(' ')
 
-                for columns in range(116):
+                for columns in range(130):
                     tmp[columns] = line[columns]
 
                 tmp_list.append(tmp)
@@ -119,7 +119,7 @@ def get_corr(data):
 def ten_fold(fold):
 
     series = load_time_series()
-    print('series:',series)
+    labels = load_label()
     ts_folder = StratifiedKFold(n_splits=3, random_state=0, shuffle=True).split(series, labels)
 
     fold_count = 0
