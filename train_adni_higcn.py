@@ -164,8 +164,9 @@ def ten_fold(fold):
         random.Random(0).shuffle(train)
 
         neww = np.array(new_labels)
+        print('neww:',neww)
         #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        
- #       print("new_labels:",(new_labels), (labels))
+        print("new_labels:",(new_labels), (labels))
  #       print("new_series:",(new_series), (series))        
         #########################################
 
