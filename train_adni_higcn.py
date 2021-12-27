@@ -70,11 +70,11 @@ def load_time_series():
 
             tmp_list = []
             for line in f:  # 116
-                tmp = np.zeros(130)
+                tmp = np.zeros(116)
                 line.strip('\n')
                 line = line.split(' ')
 
-                for columns in range(130):
+                for columns in range(116):
                     tmp[columns] = line[columns]
 
                 tmp_list.append(tmp)
@@ -153,8 +153,8 @@ def ten_fold(fold):
 
         neww = np.array(new_labels)
         #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        
-      #  print((new_labels), (labels))
-      #  print((new_series), (series))        
+        print("new_labels:",(new_labels), (labels))
+        print("new_series:",(new_series), (series))        
         #########################################
 
         print(test, neww[test])
