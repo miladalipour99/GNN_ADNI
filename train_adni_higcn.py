@@ -138,6 +138,9 @@ def ten_fold(fold):
         train = t_idx
         for ti in range(len(train)):
             if labels[train[ti]] == 1:
+                print('series[train[ti]][:, :20]',series[train[ti]][:, :20])
+                print('series[train[ti]][:, 20:40]',series[train[ti]][:, 20:40])
+                print('series[train[ti]][:, 40:]',series[train[ti]][:, 40:])
                 new_series.append(series[train[ti]][:, :20])
                 new_series.append(series[train[ti]][:, 20:40])
                 new_series.append(series[train[ti]][:, 40:])
@@ -173,7 +176,7 @@ def ten_fold(fold):
         print("new_labels:",new_labels)
         print("train:",train)
         print("test:",test)
-        print("pcc:",pcc)
+       # print("pcc:",pcc)
         return pcc, train, test, new_labels
 
 
