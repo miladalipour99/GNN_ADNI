@@ -70,7 +70,7 @@ def load_time_series():
 
             tmp_list = []
             for line in f:  # 116
-                tmp = np.zeros(116)
+                tmp = np.zeros(130)
                 line.strip('\n')
                 line = line.split(' ')
 
