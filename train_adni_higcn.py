@@ -64,8 +64,8 @@ class EarlyStopping:
 
 def load_time_series():
     t_brains = []
-    for i in range(75):
-        with open('/content/ADNI/'+ str(i + 1) + '.txt', 'r') as f:
+    for i in range(133):
+        with open('ADNI/'+ str(i + 1) + '.txt', 'r') as f:
             counts = 0
 
             tmp_list = []
@@ -91,7 +91,7 @@ def load_time_series():
 
 # load 866 label
 def load_label():
-    filename_graphs = '/content/ADNI/label_ADNI.txt'
+    filename_graphs = 'ADNI/label_ADNI.txt'
 
     graph_labels = []
 
@@ -134,9 +134,9 @@ def ten_fold(fold):
         train = t_idx
         for ti in range(len(train)):
             if labels[train[ti]] == 1:
-                new_series.append(series[train[ti]][:, :24])
-                new_series.append(series[train[ti]][:, 24:48])
-                new_series.append(series[train[ti]][:, 48:])
+                new_series.append(series[train[ti]][:, :45])
+                new_series.append(series[train[ti]][:, 45:90])
+                new_series.append(series[train[ti]][:, 90:])
 
                 new_labels.append(1)
                 new_labels.append(1)
@@ -410,9 +410,9 @@ def train():
             print('train_result:', fold, epoch, train_result)
 
             with torch.no_grad():
-                torch.save(model.state_dict(), '/content/hi/higcn_ADNI' + str(fold) + '_0.0' + '.pt')
+                torch.save(model.state_dict(), 'hi/higcn_ADNI' + str(fold) + '_0.0' + '.pt')
 
-        model.load_state_dict(torch.load('/content/hi/higcn_ADNI' + str(fold) + '_0.0' + '.pt'))
+        model.load_state_dict(torch.load('hi/higcn_ADNI' + str(fold) + '_0.0' + '.pt'))
 
         test_out, _ = model.forward(train_test, train_test_node_adj)
         test_output = test_out.cpu().data.numpy().argmax(axis=1)[:len(test)]
