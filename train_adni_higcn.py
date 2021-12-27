@@ -119,8 +119,7 @@ def get_corr(data):
 def ten_fold(fold):
 
     series = load_time_series()
-    labels = load_label()
-    print('labels:',labels)
+    print('series:',series)
     ts_folder = StratifiedKFold(n_splits=3, random_state=0, shuffle=True).split(series, labels)
 
     fold_count = 0
