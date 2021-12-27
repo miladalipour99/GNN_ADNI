@@ -165,11 +165,12 @@ def ten_fold(fold):
 
         neww = np.array(new_labels)
         print('neww:',neww)
+        print("shape_neww:",neww.shape)
         #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        
         print("new_labels:",(new_labels), (labels))
  #       print("new_series:",(new_series), (series))        
         #########################################
-
+        print("shape_test:",test.shape)
         print(test, neww[test])
 
         print(len(new_labels), len(labels))
