@@ -64,7 +64,7 @@ class EarlyStopping:
 
 def load_time_series():
     t_brains = []
-    for i in range(75):
+    for i in range(70):
         with open('/content/ADNI/'+ str(i + 1) + '.txt', 'r') as f:
             counts = 0
 
@@ -120,7 +120,7 @@ def ten_fold(fold):
 
     series = load_time_series()
     labels = load_label()
-    ts_folder = StratifiedKFold(n_splits=7, random_state=0, shuffle=True).split(series, labels)
+    ts_folder = StratifiedKFold(n_splits=3, random_state=0, shuffle=True).split(series, labels)
     fold_count = 0
     for t_idx, s_idx in ts_folder:
 
@@ -134,9 +134,9 @@ def ten_fold(fold):
         train = t_idx
         for ti in range(len(train)):
             if labels[train[ti]] == 1:
-                new_series.append(series[train[ti]][:, :25])
-                new_series.append(series[train[ti]][:, 25:50])
-                new_series.append(series[train[ti]][:, 50:])
+                new_series.append(series[train[ti]][:, :24])
+                new_series.append(series[train[ti]][:, 24:48])
+                new_series.append(series[train[ti]][:, 48:])
 
                 new_labels.append(1)
                 new_labels.append(1)
@@ -333,7 +333,7 @@ def train():
     thr = 0
     ts_result = []
 
-    for fold in range(7):
+    for fold in range(3):
         pcc, train, test, new_labels = ten_fold(fold)
         new_labels = np.array(new_labels)
         graph_kenel = get_graph_kernel(fold)
