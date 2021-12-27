@@ -120,7 +120,7 @@ def ten_fold(fold):
 
     series = load_time_series()
     labels = load_label()
-    ts_folder = StratifiedKFold(n_splits=4, random_state=0, shuffle=True).split(series, labels)
+    ts_folder = StratifiedKFold(n_splits=7, random_state=0, shuffle=True).split(series, labels)
     fold_count = 0
     for t_idx, s_idx in ts_folder:
 
@@ -333,7 +333,7 @@ def train():
     thr = 0
     ts_result = []
 
-    for fold in range(4):
+    for fold in range(7):
         pcc, train, test, new_labels = ten_fold(fold)
         new_labels = np.array(new_labels)
         graph_kenel = get_graph_kernel(fold)
