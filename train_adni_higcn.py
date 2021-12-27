@@ -121,12 +121,13 @@ def ten_fold(fold):
     series = load_time_series()
     labels = load_label()
     ts_folder = StratifiedKFold(n_splits=3, random_state=0, shuffle=True).split(series, labels)
-    #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    print(ts_folder)
-    #########################################
+
     fold_count = 0
     for t_idx, s_idx in ts_folder:
-
+  #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       
+        print('t_idx:',t_idx)
+        print('s_idx:',s_idx)
+  #########################################
         if fold != fold_count:
             fold_count += 1
             continue
