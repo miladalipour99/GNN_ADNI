@@ -125,8 +125,8 @@ def ten_fold(fold):
     fold_count = 0
     for t_idx, s_idx in ts_folder:
   #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       
-        print('t_idx:',t_idx)
-        print('s_idx:',s_idx)
+ #       print('t_idx:',t_idx)
+ #       print('s_idx:',s_idx)
   #########################################
         if fold != fold_count:
             fold_count += 1
@@ -153,8 +153,8 @@ def ten_fold(fold):
 
         neww = np.array(new_labels)
         #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        
-        print("new_labels:",(new_labels), (labels))
-        print("new_series:",(new_series), (series))        
+ #       print("new_labels:",(new_labels), (labels))
+ #       print("new_series:",(new_series), (series))        
         #########################################
 
         print(test, neww[test])
@@ -170,7 +170,10 @@ def ten_fold(fold):
         print(len(new_series), len(series))
 
         pcc = get_corr(new_series)
-
+        print("new_labels:",new_labels)
+        print("train:",train)
+        print("test:",test)
+        print("pcc:",pcc)
         return pcc, train, test, new_labels
 
 
