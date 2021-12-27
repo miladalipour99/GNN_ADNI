@@ -64,7 +64,7 @@ class EarlyStopping:
 
 def load_time_series():
     t_brains = []
-    for i in range(70):
+    for i in range(68):
         with open('ADNI/'+ str(i + 1) + '.txt', 'r') as f:
             counts = 0
 
