@@ -172,7 +172,7 @@ def ten_fold(fold):
  #       print("new_series:",(new_series), (series))        
         #########################################
         print("shape_test:",test.shape)
-        print(test, neww[test])
+   #     print(test, neww[test])
 
         print(len(new_labels), len(labels))
         print(len(new_series), len(series))
